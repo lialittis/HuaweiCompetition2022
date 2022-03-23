@@ -22,32 +22,38 @@ Table getNextLineAndSplitIntoTokens(string fname)
     while(getline(file,line)){
       row.clear();
       stringstream str(line);
-       while(getline(str,cell,','))
-         row.push_back(cell);
-       if(count==0)
-         table.names = row;
-       else
-         table.contents.push_back(row);
-       count ++;
+      // cout << line <<endl;
+      while(getline(str,cell,',')){
+        // cout<<cell<<endl;
+        row.push_back(cell);
+      }
+      if(count == 0){
+        //cout <<"size of row:"<<row.size()<<endl;
+        for(auto r:row){
+          table.names.push_back(r);
+        }
+      }
+      else
+        table.contents.push_back(row);
+      count++;
     }
   }
   else
     cout<<"Could not open the file :"<< fname<<endl;
-  printTable(table);
+  // printTable(table);
   return table;
 }
 
 void printTable(Table table)
 {
   for(int i = 0; i < int(table.names.size()); i++) {
-    cout << table.names[i] <<' ';
+    cout << table.names[i] <<",";
   }
-  cout <<endl;
-  for(int i = 0; i < int(table.names.size()); i++) {
+  cout<<endl;
+  for(int i = 0; i < int(table.contents.size()); i++) {
     for(int j = 0; j < int(table.contents[i].size()); j++){
-      cout <<table.contents[i][j]<<' ';
+      cout <<table.contents[i][j]<<";";
     }
     cout <<endl;
   }
-
 }

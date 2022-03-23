@@ -1,19 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include "helper.h"
+#include <filesystem>
+#include <unistd.h>
 
 int main() {
-    std::cout << "Hello world!"<<std::endl;
-    
-    // read csv data
-    // std::ifstream file();
-    // demande.csv
 
-    // getNextLineAndSplitIntoTokens("./CMakeLists.txt");
-    ifstream file("demand.csv",ios::in);
-    if(file.is_open())
-      cout<<"yes"<<endl;
-    else
-      cout <<"no"<<endl;
-    return 0;
+  // read csv data
+  // std::ifstream file();
+  // demand.csv
+  Table tableDemand = getNextLineAndSplitIntoTokens("../CodeCraft-2022/src/data/demand.csv");
+  Table tableQos = getNextLineAndSplitIntoTokens("../CodeCraft-2022/src/data/qos.csv");
+  Table tableSiteBW = getNextLineAndSplitIntoTokens("../CodeCraft-2022/src/data/site_bandwidth.csv");
+  
+  return 0;
 }
