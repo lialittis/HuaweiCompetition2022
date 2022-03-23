@@ -45,7 +45,7 @@ Mkfile.old
 dkms.conf
 
 # specific
-./初赛/SDK/SDK_C++/build
-./初赛/SDK/SDK_C++/bin
+*/build
+*/bin
 
 
