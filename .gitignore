@@ -45,7 +45,7 @@ Mkfile.old
 dkms.conf
 
 # specific
-*/build
-*/bin
+**/build
+**/bin
 
 
