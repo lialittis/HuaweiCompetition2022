@@ -25,6 +25,7 @@ Table getNextLineAndSplitIntoTokens(string fname)
       // cout << line <<endl;
       while(getline(str,cell,',')){
         // cout<<cell<<endl;
+        cell.erase(std::remove(cell.begin(),cell.end(), '\r'),cell.end());
         row.push_back(cell);
       }
       if(count == 0){
@@ -43,6 +44,7 @@ Table getNextLineAndSplitIntoTokens(string fname)
   // printTable(table);
   return table;
 }
+
 
 void printTable(Table table)
 {
