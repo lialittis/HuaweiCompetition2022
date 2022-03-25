@@ -39,9 +39,9 @@ int main() {
   // vector<vector<int>> results(M,vector<int>(N,0));
 
   // output file
-  string path = "../output";
+  string path = "/output";
   mkdir(path.c_str(),0777); // create directory
-  fstream resFile("../output/solution.txt",fstream::out | fstream::trunc);
+  fstream resFile("/output/solution.txt",fstream::out | fstream::trunc);
   if(!resFile.is_open())
     cout<<"Problem of output"<<endl;
   // time
