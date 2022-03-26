@@ -39,9 +39,9 @@ int main() {
   // vector<vector<int>> results(M,vector<int>(N,0));
 
   // output file
-  string path = "../output";
+  string path = "/output";
   mkdir(path.c_str(),0777); // create directory
-  fstream resFile("../output/solution.txt",fstream::out | fstream::trunc);
+  fstream resFile("/output/solution.txt",fstream::out | fstream::trunc);
   if(!resFile.is_open())
     cout<<"Problem of output"<<endl;
   // time
@@ -68,13 +68,17 @@ int main() {
           temp_usedBW[j] += rest_demand;
           //auto n_name = regex_replace(name,newlines_re,"");
           if(flag_firt) {
-            resFile << name <<":<"<<edge<<","<<rest_demand<<">\n";
+            resFile << name <<":<"<<edge<<","<<rest_demand<<">";
             flag_firt = 0;
           }
           else {
-            resFile<< ",<"<<edge<<","<<rest_demand<<">\n";
+            resFile<< ",<"<<edge<<","<<rest_demand<<">";
           }
           rest_demand = 0;
+          if(t==int(tableDemand.contents.size())-1 && i == int(tableDemand.names.size()) - 1){}
+          else {
+            resFile<<"\n";
+          }
           break;
         }
         else{
