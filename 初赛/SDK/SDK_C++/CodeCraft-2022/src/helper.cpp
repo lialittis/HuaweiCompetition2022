@@ -40,7 +40,8 @@ Table getNextLineAndSplitIntoTokens(string fname)
     }
   }
   else
-    cout<<"Could not open the file :"<< fname<<endl;
+    exit(0);
+    //cout<<"Could not open the file :"<< fname<<endl;
   // printTable(table);
   return table;
 }
